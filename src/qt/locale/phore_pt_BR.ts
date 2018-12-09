@@ -3490,8 +3490,8 @@ https://www.transifex.com/phore-project/phore-project-translations</translation>
         <translation>Você deve especificar uma masternodeprivkey na configuração. Favor verificar o manual para obter ajuda.</translation>
     </message>
     <message>
-        <source>(11771 could be used only on mainnet)</source>
-        <translation>(11771 could be used only on mainnet)</translation>
+        <source>(11788 could be used only on mainnet)</source>
+        <translation>(11788 could be used only on mainnet)</translation>
     </message>
     <message>
         <source>(default: %s)</source>
@@ -3502,8 +3502,8 @@ https://www.transifex.com/phore-project/phore-project-translations</translation>
         <translation>(padrão: 1)</translation>
     </message>
     <message>
-        <source>(must be 11771 for mainnet)</source>
-        <translation>(deve ser 11771 para mainnet)</translation>
+        <source>(must be 11788 for mainnet)</source>
+        <translation>(deve ser 11788 para mainnet)</translation>
     </message>
     <message>
         <source>Accept connections from outside (default: 1 if no -proxy or -connect)</source>

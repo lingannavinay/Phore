@@ -4039,8 +4039,8 @@ For eksempel: alertnotify=Echo %% | mail - s "Phore ALARM!" e-mail@administrator
         <translation>Der skal angives en masternodeprivkey i konfigurationen. For mere information, se i dokumentationen.</translation>
     </message>
     <message>
-        <source>(11771 could be used only on mainnet)</source>
-        <translation>(11771 kunne kun bruges på hovednettet)</translation>
+        <source>(11788 could be used only on mainnet)</source>
+        <translation>(11788 kunne kun bruges på hovednettet)</translation>
     </message>
     <message>
         <source>(default: %s)</source>
@@ -4051,8 +4051,8 @@ For eksempel: alertnotify=Echo %% | mail - s "Phore ALARM!" e-mail@administrator
         <translation>(default: 1)</translation>
     </message>
     <message>
-        <source>(must be 11771 for mainnet)</source>
-        <translation>(skal være 11771 for hovednettet)</translation>
+        <source>(must be 11788 for mainnet)</source>
+        <translation>(skal være 11788 for hovednettet)</translation>
     </message>
     <message>
         <source>Accept command line and JSON-RPC commands</source>
