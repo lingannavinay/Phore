@@ -363,20 +363,20 @@ void BitcoinGUI::createActions(const NetworkStyle* networkStyle)
     tabGroup->addAction(historyAction);
 
     QIcon privacyIcon;
-    privacyIcon.addFile(":/icons/privacy",QSize(40,40),QIcon::Normal,QIcon::On);
-    privacyIcon.addFile(":/icons/privacy_off",QSize(40,40),QIcon::Normal,QIcon::Off);
+   // privacyIcon.addFile(":/icons/privacy",QSize(40,40),QIcon::Normal,QIcon::On);
+    //privacyIcon.addFile(":/icons/privacy_off",QSize(40,40),QIcon::Normal,QIcon::Off);
 
     privacyAction = new QAction(QIcon(":/icons/privacy"), tr("&Privacy"), this);
-    privacyAction->setStatusTip(tr("Privacy Actions for zPHR"));
-    privacyAction->setToolTip(privacyAction->statusTip());
-    privacyAction->setCheckable(true);
-    privacyAction->setIcon(privacyIcon);
+    //privacyAction->setStatusTip(tr("Privacy Actions for zPHR"));
+    //privacyAction->setToolTip(privacyAction->statusTip());
+    //privacyAction->setCheckable(true);
+    //privacyAction->setIcon(privacyIcon);
 #ifdef Q_OS_MAC
-    privacyAction->setShortcut(QKeySequence(Qt::CTRL + Qt::Key_5));
+    //privacyAction->setShortcut(QKeySequence(Qt::CTRL + Qt::Key_5));
 #else
-    privacyAction->setShortcut(QKeySequence(Qt::ALT + Qt::Key_5));
+    //privacyAction->setShortcut(QKeySequence(Qt::ALT + Qt::Key_5));
 #endif
-    tabGroup->addAction(privacyAction);
+    //tabGroup->addAction(privacyAction);
 
 #ifdef ENABLE_WALLET
 
@@ -410,23 +410,23 @@ void BitcoinGUI::createActions(const NetworkStyle* networkStyle)
     connect(sendCoinsAction, SIGNAL(triggered()), this, SLOT(gotoSendCoinsPage()));
     connect(receiveCoinsAction, SIGNAL(triggered()), this, SLOT(showNormalIfMinimized()));
     connect(receiveCoinsAction, SIGNAL(triggered()), this, SLOT(gotoReceiveCoinsPage()));
-    connect(privacyAction, SIGNAL(triggered()), this, SLOT(showNormalIfMinimized()));
-    connect(privacyAction, SIGNAL(triggered()), this, SLOT(gotoPrivacyPage()));
+    //connect(privacyAction, SIGNAL(triggered()), this, SLOT(showNormalIfMinimized()));
+    //connect(privacyAction, SIGNAL(triggered()), this, SLOT(gotoPrivacyPage()));
     connect(historyAction, SIGNAL(triggered()), this, SLOT(showNormalIfMinimized()));
     connect(historyAction, SIGNAL(triggered()), this, SLOT(gotoHistoryPage()));
 #endif // ENABLE_WALLET
 
     QIcon proposalIcon;
-    proposalIcon.addFile(":/icons/proposal",QSize(40,40),QIcon::Normal,QIcon::On);
-    proposalIcon.addFile(":/icons/proposal_off",QSize(40,40),QIcon::Normal,QIcon::Off);
+    //proposalIcon.addFile(":/icons/proposal",QSize(40,40),QIcon::Normal,QIcon::On);
+    //proposalIcon.addFile(":/icons/proposal_off",QSize(40,40),QIcon::Normal,QIcon::Off);
 
     proposalAction = new QAction(QIcon(":/icons/proposal"), tr("&Proposals"), this);
-    proposalAction->setStatusTip(tr("Browse proposals"));
-    proposalAction->setToolTip(proposalAction->statusTip());
-    proposalAction->setCheckable(true);
-    proposalAction->setIcon(proposalIcon);
-    proposalAction->setShortcut(QKeySequence(Qt::CTRL + Qt::Key_7));
-    tabGroup->addAction(proposalAction);
+    //proposalAction->setStatusTip(tr("Browse proposals"));
+    //proposalAction->setToolTip(proposalAction->statusTip());
+    //proposalAction->setCheckable(true);
+    //proposalAction->setIcon(proposalIcon);
+    //proposalAction->setShortcut(QKeySequence(Qt::CTRL + Qt::Key_7));
+    //tabGroup->addAction(proposalAction);
 
     quitAction = new QAction(QIcon(":/icons/quit"), tr("E&xit"), this);
     quitAction->setStatusTip(tr("Quit application"));
@@ -506,8 +506,8 @@ void BitcoinGUI::createActions(const NetworkStyle* networkStyle)
     showHelpMessageAction->setMenuRole(QAction::NoRole);
     showHelpMessageAction->setStatusTip(tr("Show the Phore Core help message to get a list with possible Phore command-line options"));
 
-    connect(proposalAction, SIGNAL(triggered()), this, SLOT(showNormalIfMinimized()));
-    connect(proposalAction, SIGNAL(triggered()), this, SLOT(gotoProposalPage()));
+    //connect(proposalAction, SIGNAL(triggered()), this, SLOT(showNormalIfMinimized()));
+    //connect(proposalAction, SIGNAL(triggered()), this, SLOT(gotoProposalPage()));
 
     connect(quitAction, SIGNAL(triggered()), qApp, SLOT(quit()));
     connect(aboutAction, SIGNAL(triggered()), this, SLOT(aboutClicked()));
@@ -619,14 +619,14 @@ void BitcoinGUI::createToolBars()
         toolbar->addAction(overviewAction);
         toolbar->addAction(sendCoinsAction);
         toolbar->addAction(receiveCoinsAction);
-        toolbar->addAction(privacyAction);
+        //toolbar->addAction(privacyAction);
         toolbar->addAction(historyAction);
-        toolbar->addAction(privacyAction);
+        //toolbar->addAction(privacyAction);
         QSettings settings;
         if (settings.value("fShowMasternodesTab").toBool()) {
             toolbar->addAction(masternodeAction);
         }
-        toolbar->addAction(proposalAction);
+        //toolbar->addAction(proposalAction);
         toolbar->setMovable(false); // remove unused icon in upper left corner
         toolbar->setOrientation(Qt::Vertical);
         toolbar->setIconSize(QSize(40,40));
@@ -721,13 +721,13 @@ void BitcoinGUI::setWalletActionsEnabled(bool enabled)
     overviewAction->setEnabled(enabled);
     sendCoinsAction->setEnabled(enabled);
     receiveCoinsAction->setEnabled(enabled);
-    privacyAction->setEnabled(enabled);
+    //privacyAction->setEnabled(enabled);
     historyAction->setEnabled(enabled);
     QSettings settings;
     if (settings.value("fShowMasternodesTab").toBool()) {
         masternodeAction->setEnabled(enabled);
     }
-    proposalAction->setEnabled(enabled);
+    //proposalAction->setEnabled(enabled);
     encryptWalletAction->setEnabled(enabled);
     backupWalletAction->setEnabled(enabled);
     changePassphraseAction->setEnabled(enabled);
@@ -779,7 +779,7 @@ void BitcoinGUI::createTrayIconMenu()
     trayIconMenu->addSeparator();
     trayIconMenu->addAction(sendCoinsAction);
     trayIconMenu->addAction(receiveCoinsAction);
-    trayIconMenu->addAction(privacyAction);
+    //trayIconMenu->addAction(privacyAction);
     trayIconMenu->addSeparator();
     trayIconMenu->addAction(signMessageAction);
     trayIconMenu->addAction(verifyMessageAction);
@@ -877,8 +877,8 @@ void BitcoinGUI::gotoReceiveCoinsPage()
 
 void BitcoinGUI::gotoPrivacyPage()
 {
-    privacyAction->setChecked(true);
-    if (walletFrame) walletFrame->gotoPrivacyPage();
+    //privacyAction->setChecked(true);
+    //if (walletFrame) walletFrame->gotoPrivacyPage();
 }
 
 void BitcoinGUI::gotoSendCoinsPage(QString addr)
@@ -889,8 +889,8 @@ void BitcoinGUI::gotoSendCoinsPage(QString addr)
 
 void BitcoinGUI::gotoProposalPage()
 {
-    proposalAction->setChecked(true);
-    if (walletFrame) walletFrame->gotoProposalPage();
+    //proposalAction->setChecked(true);
+    //if (walletFrame) walletFrame->gotoProposalPage();
 }
 
 void BitcoinGUI::gotoSignMessageTab(QString addr)
